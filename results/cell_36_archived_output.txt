@@ -1,0 +1,116 @@
+COLUMNS IN CSV:
+['date', 'close', 'high', 'low', 'open', 'volume', 'twitter_neg', 'twitter_neu', 'twitter_pos', 'twitter_compound', 'news_neg', 'news_neu', 'news_pos', 'news_compound']
+
+Experiments created:
+- Price: rows=136, features=16
+- Price+Twitter: rows=136, features=20
+- Price+News: rows=136, features=20
+- All: rows=136, features=24
+
+BASE RESULTS (sorted by macro_f1_mean):
+
+            setup        model hidden_layer_sizes  n_folds  macro_f1_mean  \
+0           Price    MLP_1HL_4               (4,)        3       0.393687   
+1             All  MLP_2HL_4_4             (4, 4)        3       0.373732   
+2             All    MLP_1HL_4               (4,)        3       0.348813   
+3           Price  MLP_2HL_4_4             (4, 4)        3       0.317996   
+4           Price    MLP_1HL_8               (8,)        3       0.306634   
+5   Price+Twitter  MLP_2HL_4_4             (4, 4)        3       0.281648   
+6   Price+Twitter    MLP_1HL_4               (4,)        3       0.281149   
+7           Price  MLP_2HL_8_4             (8, 4)        3       0.266498   
+8      Price+News  MLP_2HL_8_4             (8, 4)        3       0.253030   
+9   Price+Twitter  MLP_2HL_8_4             (8, 4)        3       0.233084   
+10     Price+News  MLP_2HL_4_4             (4, 4)        3       0.229101   
+11     Price+News    MLP_1HL_4               (4,)        3       0.221083   
+12            All  MLP_2HL_8_4             (8, 4)        3       0.201870   
+13     Price+News    MLP_1HL_8               (8,)        3       0.176353   
+14  Price+Twitter    MLP_1HL_8               (8,)        3       0.159805   
+15            All    MLP_1HL_8               (8,)        3       0.151611   
+
+    macro_f1_std  acc_mean  balacc_mean  
+0       0.122881  0.400000     0.413051  
+1       0.109476  0.422222     0.372928  
+2       0.036451  0.422222     0.382187  
+3       0.071185  0.333333     0.293122  
+4       0.105673  0.333333     0.311023  
+5       0.137951  0.333333     0.331305  
+6       0.058547  0.311111     0.288977  
+7       0.075397  0.288889     0.255203  
+8       0.104458  0.288889     0.264462  
+9       0.234066  0.266667     0.245062  
+10      0.044055  0.266667     0.298236  
+11      0.072273  0.266667     0.239771  
+12      0.107492  0.222222     0.285185  
+13      0.135467  0.177778     0.220635  
+14      0.066186  0.177778     0.191975  
+15      0.028519  0.200000     0.197531  
+
+TOP-5 (fixed from your COMPARISON TABLE):
+{'setup': 'All', 'model': 'MLP_1HL_4', 'hidden_layer_sizes': (4,)}
+{'setup': 'Price', 'model': 'MLP_1HL_4', 'hidden_layer_sizes': (4,)}
+{'setup': 'Price+News', 'model': 'MLP_2HL_8_4', 'hidden_layer_sizes': (8, 4)}
+{'setup': 'All', 'model': 'MLP_2HL_4_4', 'hidden_layer_sizes': (4, 4)}
+{'setup': 'Price', 'model': 'MLP_2HL_4_4', 'hidden_layer_sizes': (4, 4)}
+
+Total candidate param sets before cap: 150
+Per-model cap: 40
+
+==========================================================================================
+[TUNED-FAST] All | MLP_1HL_4 | HLS=(4,)
+Best Macro-F1 = 0.4216 ± 0.1379 | folds=3 | tested=40
+Best Accuracy Mean = 0.4667 | Best BalAcc Mean = 0.4935
+Best Params:
+{'clf__solver': 'adam', 'clf__alpha': 1e-05, 'clf__learning_rate_init': 0.0001, 'clf__activation': 'tanh', 'clf__early_stopping': False, 'clf__validation_fraction': 0.1, 'clf__n_iter_no_change': 10, 'clf__batch_size': 64}
+
+==========================================================================================
+[TUNED-FAST] Price | MLP_1HL_4 | HLS=(4,)
+Best Macro-F1 = 0.3716 ± 0.0748 | folds=3 | tested=40
+Best Accuracy Mean = 0.3556 | Best BalAcc Mean = 0.4340
+Best Params:
+{'clf__solver': 'adam', 'clf__alpha': 1e-05, 'clf__learning_rate_init': 0.01, 'clf__activation': 'relu', 'clf__early_stopping': True, 'clf__validation_fraction': 0.1, 'clf__n_iter_no_change': 10, 'clf__batch_size': 64}
+
+==========================================================================================
+[TUNED-FAST] Price+News | MLP_2HL_8_4 | HLS=(8, 4)
+Best Macro-F1 = 0.3488 ± 0.0876 | folds=3 | tested=40
+Best Accuracy Mean = 0.3778 | Best BalAcc Mean = 0.3663
+Best Params:
+{'clf__solver': 'adam', 'clf__alpha': 1e-05, 'clf__learning_rate_init': 0.0001, 'clf__activation': 'tanh', 'clf__early_stopping': False, 'clf__validation_fraction': 0.1, 'clf__n_iter_no_change': 10, 'clf__batch_size': 64}
+
+==========================================================================================
+[TUNED-FAST] All | MLP_2HL_4_4 | HLS=(4, 4)
+Best Macro-F1 = 0.3666 ± 0.0410 | folds=3 | tested=40
+Best Accuracy Mean = 0.3778 | Best BalAcc Mean = 0.3793
+Best Params:
+{'clf__solver': 'adam', 'clf__alpha': 1e-05, 'clf__learning_rate_init': 0.01, 'clf__activation': 'relu', 'clf__early_stopping': False, 'clf__validation_fraction': 0.1, 'clf__n_iter_no_change': 10, 'clf__batch_size': 32}
+
+==========================================================================================
+[TUNED-FAST] Price | MLP_2HL_4_4 | HLS=(4, 4)
+Best Macro-F1 = 0.3642 ± 0.1274 | folds=3 | tested=40
+Best Accuracy Mean = 0.3778 | Best BalAcc Mean = 0.3484
+Best Params:
+{'clf__solver': 'adam', 'clf__alpha': 1e-05, 'clf__learning_rate_init': 0.01, 'clf__activation': 'relu', 'clf__early_stopping': False, 'clf__validation_fraction': 0.1, 'clf__n_iter_no_change': 10, 'clf__batch_size': 64}
+
+##########################################################################################
+FAST TUNING SUMMARY (Fixed Top-5, capped search) + ACCURACY
+##########################################################################################
+
+        setup        model hidden_layer_sizes  n_folds  best_macro_f1_mean  \
+0         All    MLP_1HL_4               (4,)        3            0.421602   
+1       Price    MLP_1HL_4               (4,)        3            0.371621   
+2         All  MLP_2HL_4_4             (4, 4)        3            0.366611   
+3       Price  MLP_2HL_4_4             (4, 4)        3            0.364194   
+4  Price+News  MLP_2HL_8_4             (8, 4)        3            0.348797   
+
+   best_macro_f1_std  best_accuracy_mean  best_balacc_mean  tested  \
+0           0.137876            0.466667          0.493474      40   
+1           0.074785            0.355556          0.434039      40   
+2           0.041018            0.377778          0.379277      40   
+3           0.127427            0.377778          0.348413      40   
+4           0.087559            0.377778          0.366314      40   
+
+                                         best_params  
+0  {'clf__solver': 'adam', 'clf__alpha': 1e-05, '...  
+1  {'clf__solver': 'adam', 'clf__alpha': 1e-05, '...  
+2  {'clf__solver': 'adam', 'clf__alpha': 1e-05, '...  
+3  {'clf__solver': 'adam', 'clf__alpha': 1e-05, '...  
+4  {'clf__solver': 'adam', 'clf__alpha': 1e-05, '...  

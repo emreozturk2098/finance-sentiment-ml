@@ -1,0 +1,530 @@
+COLUMNS IN CSV:
+['date', 'close', 'high', 'low', 'open', 'volume', 'Fear_Greed_Value', 'News_neg', 'News_neu', 'News_pos', 'News_compound']
+
+Detected News Sentiment columns: ['News_neg', 'News_neu', 'News_pos', 'News_compound']
+
+######################################################################
+EXP: Price
+Rows: 678 | Features: 16
+Overall date range: 2022-02-09 -> 2023-12-18
+[Price] NOTE: Labels are computed dynamically per fold from that fold's TRAIN next_ret terciles.
+Walk-forward first TEST start: 2023-03-16
+Walk-forward last  TEST end  : 2023-12-10
+######################################################################
+[Price | LogReg] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price | LogReg] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price | LogReg] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price | LogReg] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price | LogReg] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price | LogReg] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price | LogReg] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price | LogReg] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price | LogReg] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+--> LogReg summary: Acc=0.4926±0.1341 | BalAcc=0.4164±0.0520 | Prec=0.4067±0.1026 | Rec=0.4164±0.0520 | F1=0.3592±0.0494
+[Price | LinearSVM] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price | LinearSVM] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price | LinearSVM] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price | LinearSVM] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price | LinearSVM] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price | LinearSVM] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price | LinearSVM] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price | LinearSVM] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price | LinearSVM] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+--> LinearSVM summary: Acc=0.5000±0.1312 | BalAcc=0.4226±0.0553 | Prec=0.4140±0.1045 | Rec=0.4226±0.0553 | F1=0.3623±0.0485
+[Price | RBFSVM] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price | RBFSVM] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price | RBFSVM] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price | RBFSVM] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price | RBFSVM] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price | RBFSVM] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price | RBFSVM] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price | RBFSVM] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price | RBFSVM] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+--> RBFSVM summary: Acc=0.4778±0.1190 | BalAcc=0.3974±0.0568 | Prec=0.3794±0.1538 | Rec=0.3974±0.0568 | F1=0.3511±0.0670
+[Price | RandomForest] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price | RandomForest] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price | RandomForest] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price | RandomForest] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price | RandomForest] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price | RandomForest] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price | RandomForest] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price | RandomForest] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price | RandomForest] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+--> RandomForest summary: Acc=0.4148±0.1386 | BalAcc=0.3550±0.0701 | Prec=0.3477±0.0922 | Rec=0.3550±0.0701 | F1=0.3289±0.0639
+[Price | ExtraTrees] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price | ExtraTrees] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price | ExtraTrees] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price | ExtraTrees] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price | ExtraTrees] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price | ExtraTrees] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price | ExtraTrees] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price | ExtraTrees] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price | ExtraTrees] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+--> ExtraTrees summary: Acc=0.4000±0.0943 | BalAcc=0.3480±0.0822 | Prec=0.3116±0.0796 | Rec=0.3480±0.0822 | F1=0.3102±0.0623
+[Price | GradBoost] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price | GradBoost] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price | GradBoost] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price | GradBoost] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price | GradBoost] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price | GradBoost] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price | GradBoost] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price | GradBoost] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price | GradBoost] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+--> GradBoost summary: Acc=0.3556±0.1041 | BalAcc=0.3340±0.0985 | Prec=0.3190±0.0887 | Rec=0.3340±0.0985 | F1=0.3088±0.0949
+[Price | HistGradBoost] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price | HistGradBoost] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price | HistGradBoost] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price | HistGradBoost] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price | HistGradBoost] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price | HistGradBoost] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price | HistGradBoost] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price | HistGradBoost] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price | HistGradBoost] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+--> HistGradBoost summary: Acc=0.3556±0.0943 | BalAcc=0.2971±0.0777 | Prec=0.3196±0.0777 | Rec=0.2971±0.0777 | F1=0.2942±0.0706
+
+######################################################################
+EXP: Price+Fear
+Rows: 678 | Features: 17
+Overall date range: 2022-02-09 -> 2023-12-18
+[Price+Fear] NOTE: Labels are computed dynamically per fold from that fold's TRAIN next_ret terciles.
+Walk-forward first TEST start: 2023-03-16
+Walk-forward last  TEST end  : 2023-12-10
+######################################################################
+[Price+Fear | LogReg] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price+Fear | LogReg] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price+Fear | LogReg] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price+Fear | LogReg] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price+Fear | LogReg] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price+Fear | LogReg] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price+Fear | LogReg] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price+Fear | LogReg] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price+Fear | LogReg] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+--> LogReg summary: Acc=0.4926±0.1412 | BalAcc=0.4187±0.0797 | Prec=0.3705±0.1021 | Rec=0.4187±0.0797 | F1=0.3488±0.0626
+[Price+Fear | LinearSVM] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price+Fear | LinearSVM] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price+Fear | LinearSVM] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price+Fear | LinearSVM] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price+Fear | LinearSVM] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price+Fear | LinearSVM] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price+Fear | LinearSVM] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price+Fear | LinearSVM] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price+Fear | LinearSVM] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+--> LinearSVM summary: Acc=0.5000±0.1424 | BalAcc=0.4251±0.0855 | Prec=0.4286±0.1434 | Rec=0.4251±0.0855 | F1=0.3600±0.0720
+[Price+Fear | RBFSVM] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price+Fear | RBFSVM] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price+Fear | RBFSVM] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price+Fear | RBFSVM] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price+Fear | RBFSVM] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price+Fear | RBFSVM] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price+Fear | RBFSVM] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price+Fear | RBFSVM] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price+Fear | RBFSVM] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+--> RBFSVM summary: Acc=0.4370±0.1620 | BalAcc=0.3460±0.0615 | Prec=0.3390±0.1619 | Rec=0.3460±0.0615 | F1=0.3038±0.0690
+[Price+Fear | RandomForest] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price+Fear | RandomForest] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price+Fear | RandomForest] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price+Fear | RandomForest] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price+Fear | RandomForest] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price+Fear | RandomForest] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price+Fear | RandomForest] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price+Fear | RandomForest] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price+Fear | RandomForest] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+--> RandomForest summary: Acc=0.3889±0.1269 | BalAcc=0.3413±0.0758 | Prec=0.3186±0.0905 | Rec=0.3413±0.0758 | F1=0.3109±0.0856
+[Price+Fear | ExtraTrees] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price+Fear | ExtraTrees] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price+Fear | ExtraTrees] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price+Fear | ExtraTrees] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price+Fear | ExtraTrees] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price+Fear | ExtraTrees] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price+Fear | ExtraTrees] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price+Fear | ExtraTrees] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price+Fear | ExtraTrees] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+--> ExtraTrees summary: Acc=0.3667±0.0898 | BalAcc=0.3237±0.0647 | Prec=0.2915±0.0456 | Rec=0.3237±0.0647 | F1=0.2834±0.0465
+[Price+Fear | GradBoost] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price+Fear | GradBoost] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price+Fear | GradBoost] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price+Fear | GradBoost] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price+Fear | GradBoost] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price+Fear | GradBoost] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price+Fear | GradBoost] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price+Fear | GradBoost] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price+Fear | GradBoost] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+--> GradBoost summary: Acc=0.3593±0.0703 | BalAcc=0.3327±0.0961 | Prec=0.3266±0.0754 | Rec=0.3327±0.0961 | F1=0.3084±0.0833
+[Price+Fear | HistGradBoost] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price+Fear | HistGradBoost] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price+Fear | HistGradBoost] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price+Fear | HistGradBoost] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price+Fear | HistGradBoost] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price+Fear | HistGradBoost] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price+Fear | HistGradBoost] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price+Fear | HistGradBoost] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price+Fear | HistGradBoost] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+--> HistGradBoost summary: Acc=0.3556±0.1202 | BalAcc=0.3111±0.0731 | Prec=0.3073±0.0634 | Rec=0.3111±0.0731 | F1=0.2933±0.0554
+
+######################################################################
+EXP: Price+News
+Rows: 678 | Features: 20
+Overall date range: 2022-02-09 -> 2023-12-18
+[Price+News] NOTE: Labels are computed dynamically per fold from that fold's TRAIN next_ret terciles.
+Walk-forward first TEST start: 2023-03-16
+Walk-forward last  TEST end  : 2023-12-10
+######################################################################
+[Price+News | LogReg] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price+News | LogReg] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price+News | LogReg] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price+News | LogReg] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price+News | LogReg] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price+News | LogReg] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price+News | LogReg] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price+News | LogReg] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price+News | LogReg] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+--> LogReg summary: Acc=0.4852±0.1435 | BalAcc=0.4139±0.0724 | Prec=0.4738±0.1860 | Rec=0.4139±0.0724 | F1=0.3690±0.0616
+[Price+News | LinearSVM] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price+News | LinearSVM] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price+News | LinearSVM] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price+News | LinearSVM] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price+News | LinearSVM] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price+News | LinearSVM] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price+News | LinearSVM] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price+News | LinearSVM] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price+News | LinearSVM] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+--> LinearSVM summary: Acc=0.4926±0.1299 | BalAcc=0.4095±0.0713 | Prec=0.4640±0.2004 | Rec=0.4095±0.0713 | F1=0.3587±0.0574
+[Price+News | RBFSVM] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price+News | RBFSVM] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price+News | RBFSVM] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price+News | RBFSVM] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price+News | RBFSVM] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price+News | RBFSVM] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price+News | RBFSVM] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price+News | RBFSVM] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price+News | RBFSVM] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+--> RBFSVM summary: Acc=0.4519±0.0944 | BalAcc=0.3782±0.0829 | Prec=0.3864±0.1041 | Rec=0.3782±0.0829 | F1=0.3542±0.0778
+[Price+News | RandomForest] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price+News | RandomForest] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price+News | RandomForest] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price+News | RandomForest] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price+News | RandomForest] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price+News | RandomForest] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price+News | RandomForest] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price+News | RandomForest] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price+News | RandomForest] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+--> RandomForest summary: Acc=0.3815±0.1144 | BalAcc=0.3154±0.0905 | Prec=0.3239±0.1040 | Rec=0.3154±0.0905 | F1=0.3027±0.0748
+[Price+News | ExtraTrees] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price+News | ExtraTrees] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price+News | ExtraTrees] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price+News | ExtraTrees] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price+News | ExtraTrees] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price+News | ExtraTrees] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price+News | ExtraTrees] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price+News | ExtraTrees] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price+News | ExtraTrees] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+--> ExtraTrees summary: Acc=0.4000±0.0577 | BalAcc=0.3660±0.0519 | Prec=0.3286±0.0555 | Rec=0.3660±0.0519 | F1=0.3285±0.0462
+[Price+News | GradBoost] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price+News | GradBoost] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price+News | GradBoost] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price+News | GradBoost] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price+News | GradBoost] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price+News | GradBoost] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price+News | GradBoost] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price+News | GradBoost] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price+News | GradBoost] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+--> GradBoost summary: Acc=0.3630±0.0873 | BalAcc=0.3454±0.0856 | Prec=0.3735±0.0931 | Rec=0.3454±0.0856 | F1=0.3266±0.0863
+[Price+News | HistGradBoost] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price+News | HistGradBoost] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price+News | HistGradBoost] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price+News | HistGradBoost] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price+News | HistGradBoost] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price+News | HistGradBoost] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price+News | HistGradBoost] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price+News | HistGradBoost] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price+News | HistGradBoost] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+--> HistGradBoost summary: Acc=0.3556±0.0624 | BalAcc=0.2989±0.0748 | Prec=0.2939±0.0548 | Rec=0.2989±0.0748 | F1=0.2850±0.0565
+
+######################################################################
+EXP: Price+Fear+News
+Rows: 678 | Features: 21
+Overall date range: 2022-02-09 -> 2023-12-18
+[Price+Fear+News] NOTE: Labels are computed dynamically per fold from that fold's TRAIN next_ret terciles.
+Walk-forward first TEST start: 2023-03-16
+Walk-forward last  TEST end  : 2023-12-10
+######################################################################
+[Price+Fear+News | LogReg] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price+Fear+News | LogReg] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price+Fear+News | LogReg] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price+Fear+News | LogReg] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price+Fear+News | LogReg] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price+Fear+News | LogReg] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price+Fear+News | LogReg] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price+Fear+News | LogReg] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price+Fear+News | LogReg] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+--> LogReg summary: Acc=0.4704±0.1541 | BalAcc=0.4005±0.0897 | Prec=0.3606±0.1020 | Rec=0.4005±0.0897 | F1=0.3375±0.0725
+[Price+Fear+News | LinearSVM] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price+Fear+News | LinearSVM] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price+Fear+News | LinearSVM] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price+Fear+News | LinearSVM] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price+Fear+News | LinearSVM] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price+Fear+News | LinearSVM] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price+Fear+News | LinearSVM] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price+Fear+News | LinearSVM] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price+Fear+News | LinearSVM] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+--> LinearSVM summary: Acc=0.4741±0.1412 | BalAcc=0.3907±0.0756 | Prec=0.3639±0.1308 | Rec=0.3907±0.0756 | F1=0.3238±0.0562
+[Price+Fear+News | RBFSVM] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price+Fear+News | RBFSVM] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price+Fear+News | RBFSVM] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price+Fear+News | RBFSVM] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price+Fear+News | RBFSVM] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price+Fear+News | RBFSVM] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price+Fear+News | RBFSVM] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price+Fear+News | RBFSVM] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price+Fear+News | RBFSVM] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+--> RBFSVM summary: Acc=0.4148±0.1094 | BalAcc=0.3496±0.0679 | Prec=0.3699±0.1366 | Rec=0.3496±0.0679 | F1=0.3202±0.0708
+[Price+Fear+News | RandomForest] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price+Fear+News | RandomForest] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price+Fear+News | RandomForest] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price+Fear+News | RandomForest] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price+Fear+News | RandomForest] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price+Fear+News | RandomForest] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price+Fear+News | RandomForest] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price+Fear+News | RandomForest] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price+Fear+News | RandomForest] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+--> RandomForest summary: Acc=0.4074±0.1341 | BalAcc=0.3506±0.0822 | Prec=0.3246±0.0877 | Rec=0.3506±0.0822 | F1=0.3215±0.0811
+[Price+Fear+News | ExtraTrees] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price+Fear+News | ExtraTrees] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price+Fear+News | ExtraTrees] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price+Fear+News | ExtraTrees] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price+Fear+News | ExtraTrees] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price+Fear+News | ExtraTrees] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price+Fear+News | ExtraTrees] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price+Fear+News | ExtraTrees] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price+Fear+News | ExtraTrees] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+--> ExtraTrees summary: Acc=0.3778±0.0707 | BalAcc=0.3275±0.0601 | Prec=0.3183±0.0463 | Rec=0.3275±0.0601 | F1=0.3011±0.0468
+[Price+Fear+News | GradBoost] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price+Fear+News | GradBoost] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price+Fear+News | GradBoost] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price+Fear+News | GradBoost] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price+Fear+News | GradBoost] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price+Fear+News | GradBoost] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price+Fear+News | GradBoost] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price+Fear+News | GradBoost] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price+Fear+News | GradBoost] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+--> GradBoost summary: Acc=0.3852±0.1144 | BalAcc=0.3634±0.0812 | Prec=0.3500±0.1145 | Rec=0.3634±0.0812 | F1=0.3331±0.0968
+[Price+Fear+News | HistGradBoost] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price+Fear+News | HistGradBoost] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price+Fear+News | HistGradBoost] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price+Fear+News | HistGradBoost] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price+Fear+News | HistGradBoost] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price+Fear+News | HistGradBoost] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price+Fear+News | HistGradBoost] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price+Fear+News | HistGradBoost] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price+Fear+News | HistGradBoost] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+--> HistGradBoost summary: Acc=0.3778±0.0972 | BalAcc=0.3298±0.1201 | Prec=0.3223±0.0889 | Rec=0.3298±0.1201 | F1=0.3136±0.0989
+
+============================
+BASELINE COMPARISON TABLE (Walk-forward; dynamic fold terciles; mean ± std across folds)
+============================
+              setup          model  n_folds accuracy_mean±std  \
+0             Price      LinearSVM        9   0.5000 ± 0.1312   
+1             Price         LogReg        9   0.4926 ± 0.1341   
+2             Price         RBFSVM        9   0.4778 ± 0.1190   
+3             Price   RandomForest        9   0.4148 ± 0.1386   
+4             Price     ExtraTrees        9   0.4000 ± 0.0943   
+5             Price      GradBoost        9   0.3556 ± 0.1041   
+6             Price  HistGradBoost        9   0.3556 ± 0.0943   
+7        Price+Fear      LinearSVM        9   0.5000 ± 0.1424   
+8        Price+Fear         LogReg        9   0.4926 ± 0.1412   
+9        Price+Fear   RandomForest        9   0.3889 ± 0.1269   
+10       Price+Fear      GradBoost        9   0.3593 ± 0.0703   
+11       Price+Fear         RBFSVM        9   0.4370 ± 0.1620   
+12       Price+Fear  HistGradBoost        9   0.3556 ± 0.1202   
+13       Price+Fear     ExtraTrees        9   0.3667 ± 0.0898   
+14  Price+Fear+News         LogReg        9   0.4704 ± 0.1541   
+15  Price+Fear+News      GradBoost        9   0.3852 ± 0.1144   
+16  Price+Fear+News      LinearSVM        9   0.4741 ± 0.1412   
+17  Price+Fear+News   RandomForest        9   0.4074 ± 0.1341   
+18  Price+Fear+News         RBFSVM        9   0.4148 ± 0.1094   
+19  Price+Fear+News  HistGradBoost        9   0.3778 ± 0.0972   
+20  Price+Fear+News     ExtraTrees        9   0.3778 ± 0.0707   
+21       Price+News         LogReg        9   0.4852 ± 0.1435   
+22       Price+News      LinearSVM        9   0.4926 ± 0.1299   
+23       Price+News         RBFSVM        9   0.4519 ± 0.0944   
+24       Price+News     ExtraTrees        9   0.4000 ± 0.0577   
+25       Price+News      GradBoost        9   0.3630 ± 0.0873   
+26       Price+News   RandomForest        9   0.3815 ± 0.1144   
+27       Price+News  HistGradBoost        9   0.3556 ± 0.0624   
+
+   precision_mean±std  recall_mean±std macro_f1_mean±std bal_acc_mean±std  
+0     0.4140 ± 0.1045  0.4226 ± 0.0553   0.3623 ± 0.0485  0.4226 ± 0.0553  
+1     0.4067 ± 0.1026  0.4164 ± 0.0520   0.3592 ± 0.0494  0.4164 ± 0.0520  
+2     0.3794 ± 0.1538  0.3974 ± 0.0568   0.3511 ± 0.0670  0.3974 ± 0.0568  
+3     0.3477 ± 0.0922  0.3550 ± 0.0701   0.3289 ± 0.0639  0.3550 ± 0.0701  
+4     0.3116 ± 0.0796  0.3480 ± 0.0822   0.3102 ± 0.0623  0.3480 ± 0.0822  
+5     0.3190 ± 0.0887  0.3340 ± 0.0985   0.3088 ± 0.0949  0.3340 ± 0.0985  
+6     0.3196 ± 0.0777  0.2971 ± 0.0777   0.2942 ± 0.0706  0.2971 ± 0.0777  
+7     0.4286 ± 0.1434  0.4251 ± 0.0855   0.3600 ± 0.0720  0.4251 ± 0.0855  
+8     0.3705 ± 0.1021  0.4187 ± 0.0797   0.3488 ± 0.0626  0.4187 ± 0.0797  
+9     0.3186 ± 0.0905  0.3413 ± 0.0758   0.3109 ± 0.0856  0.3413 ± 0.0758  
+10    0.3266 ± 0.0754  0.3327 ± 0.0961   0.3084 ± 0.0833  0.3327 ± 0.0961  
+11    0.3390 ± 0.1619  0.3460 ± 0.0615   0.3038 ± 0.0690  0.3460 ± 0.0615  
+12    0.3073 ± 0.0634  0.3111 ± 0.0731   0.2933 ± 0.0554  0.3111 ± 0.0731  
+13    0.2915 ± 0.0456  0.3237 ± 0.0647   0.2834 ± 0.0465  0.3237 ± 0.0647  
+14    0.3606 ± 0.1020  0.4005 ± 0.0897   0.3375 ± 0.0725  0.4005 ± 0.0897  
+15    0.3500 ± 0.1145  0.3634 ± 0.0812   0.3331 ± 0.0968  0.3634 ± 0.0812  
+16    0.3639 ± 0.1308  0.3907 ± 0.0756   0.3238 ± 0.0562  0.3907 ± 0.0756  
+17    0.3246 ± 0.0877  0.3506 ± 0.0822   0.3215 ± 0.0811  0.3506 ± 0.0822  
+18    0.3699 ± 0.1366  0.3496 ± 0.0679   0.3202 ± 0.0708  0.3496 ± 0.0679  
+19    0.3223 ± 0.0889  0.3298 ± 0.1201   0.3136 ± 0.0989  0.3298 ± 0.1201  
+20    0.3183 ± 0.0463  0.3275 ± 0.0601   0.3011 ± 0.0468  0.3275 ± 0.0601  
+21    0.4738 ± 0.1860  0.4139 ± 0.0724   0.3690 ± 0.0616  0.4139 ± 0.0724  
+22    0.4640 ± 0.2004  0.4095 ± 0.0713   0.3587 ± 0.0574  0.4095 ± 0.0713  
+23    0.3864 ± 0.1041  0.3782 ± 0.0829   0.3542 ± 0.0778  0.3782 ± 0.0829  
+24    0.3286 ± 0.0555  0.3660 ± 0.0519   0.3285 ± 0.0462  0.3660 ± 0.0519  
+25    0.3735 ± 0.0931  0.3454 ± 0.0856   0.3266 ± 0.0863  0.3454 ± 0.0856  
+26    0.3239 ± 0.1040  0.3154 ± 0.0905   0.3027 ± 0.0748  0.3154 ± 0.0905  
+27    0.2939 ± 0.0548  0.2989 ± 0.0748   0.2850 ± 0.0565  0.2989 ± 0.0748  
+
+============================
+TOP-5 BASELINE (Overall) by Macro-F1 mean
+============================
+        setup      model macro_f1_mean±std accuracy_mean±std bal_acc_mean±std
+0  Price+News     LogReg   0.3690 ± 0.0616   0.4852 ± 0.1435  0.4139 ± 0.0724
+1       Price  LinearSVM   0.3623 ± 0.0485   0.5000 ± 0.1312  0.4226 ± 0.0553
+2  Price+Fear  LinearSVM   0.3600 ± 0.0720   0.5000 ± 0.1424  0.4251 ± 0.0855
+3       Price     LogReg   0.3592 ± 0.0494   0.4926 ± 0.1341  0.4164 ± 0.0520
+4  Price+News  LinearSVM   0.3587 ± 0.0574   0.4926 ± 0.1299  0.4095 ± 0.0713
+
+==========================================================================================
+HYPERPARAMETER TUNING + EVALUATION FOR TOP-5 ONLY
+==========================================================================================
+
+------------------------------------------------------------------------------------------
+[TOP-1] Price+News | LogReg
+------------------------------------------------------------------------------------------
+Best params (picked on FIRST train window via TimeSeriesSplit CV): {'clf__solver': 'saga', 'clf__penalty': 'l2', 'clf__C': np.float64(0.1873817422860383)}
+Best inner-CV Macro-F1: 0.3327
+[Price+News | LogReg (TUNED)] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price+News | LogReg (TUNED)] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price+News | LogReg (TUNED)] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price+News | LogReg (TUNED)] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price+News | LogReg (TUNED)] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price+News | LogReg (TUNED)] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price+News | LogReg (TUNED)] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price+News | LogReg (TUNED)] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price+News | LogReg (TUNED)] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+
+------------------------------------------------------------------------------------------
+[TOP-2] Price | LinearSVM
+------------------------------------------------------------------------------------------
+Best params (picked on FIRST train window via TimeSeriesSplit CV): {'clf__C': np.float64(0.0002894266124716752)}
+Best inner-CV Macro-F1: 0.3142
+[Price | LinearSVM (TUNED)] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price | LinearSVM (TUNED)] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price | LinearSVM (TUNED)] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price | LinearSVM (TUNED)] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price | LinearSVM (TUNED)] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price | LinearSVM (TUNED)] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price | LinearSVM (TUNED)] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price | LinearSVM (TUNED)] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price | LinearSVM (TUNED)] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+
+------------------------------------------------------------------------------------------
+[TOP-3] Price+Fear | LinearSVM
+------------------------------------------------------------------------------------------
+Best params (picked on FIRST train window via TimeSeriesSplit CV): {'clf__C': np.float64(0.0002894266124716752)}
+Best inner-CV Macro-F1: 0.3003
+[Price+Fear | LinearSVM (TUNED)] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price+Fear | LinearSVM (TUNED)] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price+Fear | LinearSVM (TUNED)] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price+Fear | LinearSVM (TUNED)] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price+Fear | LinearSVM (TUNED)] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price+Fear | LinearSVM (TUNED)] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price+Fear | LinearSVM (TUNED)] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price+Fear | LinearSVM (TUNED)] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price+Fear | LinearSVM (TUNED)] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+
+------------------------------------------------------------------------------------------
+[TOP-4] Price | LogReg
+------------------------------------------------------------------------------------------
+Best params (picked on FIRST train window via TimeSeriesSplit CV): {'clf__solver': 'liblinear', 'clf__penalty': 'l2', 'clf__C': np.float64(0.5336699231206307)}
+Best inner-CV Macro-F1: 0.3167
+[Price | LogReg (TUNED)] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price | LogReg (TUNED)] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price | LogReg (TUNED)] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price | LogReg (TUNED)] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price | LogReg (TUNED)] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price | LogReg (TUNED)] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price | LogReg (TUNED)] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price | LogReg (TUNED)] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price | LogReg (TUNED)] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+
+------------------------------------------------------------------------------------------
+[TOP-5] Price+News | LinearSVM
+------------------------------------------------------------------------------------------
+Best params (picked on FIRST train window via TimeSeriesSplit CV): {'clf__C': np.float64(0.0024244620170823282)}
+Best inner-CV Macro-F1: 0.3270
+[Price+News | LinearSVM (TUNED)] Fold 01  TRAIN: 2022-02-09 -> 2023-03-15   TEST: 2023-03-16 -> 2023-04-14  | q_low=-0.009430, q_high=0.006971  | TRAIN dist={0: 132, 1: 136, 2: 132}  TEST dist={0: 12, 1: 11, 2: 7}
+[Price+News | LinearSVM (TUNED)] Fold 02  TRAIN: 2022-02-09 -> 2023-04-14   TEST: 2023-04-15 -> 2023-05-14  | q_low=-0.009031, q_high=0.007297  | TRAIN dist={0: 142, 1: 146, 2: 142}  TEST dist={0: 8, 1: 13, 2: 9}
+[Price+News | LinearSVM (TUNED)] Fold 03  TRAIN: 2022-02-09 -> 2023-05-14   TEST: 2023-05-15 -> 2023-06-13  | q_low=-0.008894, q_high=0.007021  | TRAIN dist={0: 152, 1: 156, 2: 152}  TEST dist={0: 7, 1: 13, 2: 10}
+[Price+News | LinearSVM (TUNED)] Fold 04  TRAIN: 2022-02-09 -> 2023-06-13   TEST: 2023-06-14 -> 2023-07-13  | q_low=-0.008907, q_high=0.006788  | TRAIN dist={0: 162, 1: 166, 2: 162}  TEST dist={0: 13, 1: 13, 2: 4}
+[Price+News | LinearSVM (TUNED)] Fold 05  TRAIN: 2022-02-09 -> 2023-07-13   TEST: 2023-07-14 -> 2023-08-12  | q_low=-0.008585, q_high=0.006923  | TRAIN dist={0: 172, 1: 176, 2: 172}  TEST dist={0: 3, 1: 24, 2: 3}
+[Price+News | LinearSVM (TUNED)] Fold 06  TRAIN: 2022-02-09 -> 2023-08-12   TEST: 2023-08-13 -> 2023-09-11  | q_low=-0.007525, q_high=0.006542  | TRAIN dist={0: 182, 1: 186, 2: 182}  TEST dist={0: 4, 1: 17, 2: 9}
+[Price+News | LinearSVM (TUNED)] Fold 07  TRAIN: 2022-02-09 -> 2023-09-11   TEST: 2023-09-12 -> 2023-10-11  | q_low=-0.007514, q_high=0.006148  | TRAIN dist={0: 192, 1: 196, 2: 192}  TEST dist={0: 8, 1: 16, 2: 6}
+[Price+News | LinearSVM (TUNED)] Fold 08  TRAIN: 2022-02-09 -> 2023-10-11   TEST: 2023-10-12 -> 2023-11-10  | q_low=-0.007244, q_high=0.006022  | TRAIN dist={0: 201, 1: 208, 2: 201}  TEST dist={0: 14, 1: 13, 2: 3}
+[Price+News | LinearSVM (TUNED)] Fold 09  TRAIN: 2022-02-09 -> 2023-11-10   TEST: 2023-11-11 -> 2023-12-10  | q_low=-0.006809, q_high=0.006377  | TRAIN dist={0: 211, 1: 218, 2: 211}  TEST dist={0: 12, 1: 9, 2: 9}
+
+============================
+TUNED TOP-5 RESULTS (Walk-forward; dynamic fold terciles; mean ± std across folds)
+============================
+        setup      model  n_folds macro_f1_mean±std accuracy_mean±std  \
+0       Price     LogReg        9   0.3478 ± 0.0588   0.4926 ± 0.1402   
+1  Price+News     LogReg        9   0.3454 ± 0.0559   0.4815 ± 0.1314   
+2       Price  LinearSVM        9   0.3399 ± 0.0916   0.5037 ± 0.1252   
+3  Price+News  LinearSVM        9   0.3340 ± 0.0715   0.4815 ± 0.1303   
+4  Price+Fear  LinearSVM        9   0.3154 ± 0.0737   0.5000 ± 0.1213   
+
+  bal_acc_mean±std precision_mean±std  recall_mean±std  \
+0  0.4087 ± 0.0716    0.3907 ± 0.1008  0.4087 ± 0.0716   
+1  0.3943 ± 0.0789    0.3986 ± 0.1376  0.3943 ± 0.0789   
+2  0.4031 ± 0.0911    0.3426 ± 0.1204  0.4031 ± 0.0911   
+3  0.3886 ± 0.0924    0.3970 ± 0.1413  0.3886 ± 0.0924   
+4  0.3900 ± 0.0741    0.3314 ± 0.1522  0.3900 ± 0.0741   
+
+   best_inner_cv_macro_f1                                        best_params  
+0                0.316674  {'clf__solver': 'liblinear', 'clf__penalty': '...  
+1                0.332668  {'clf__solver': 'saga', 'clf__penalty': 'l2', ...  
+2                0.314245      {'clf__C': np.float64(0.0002894266124716752)}  
+3                0.326978      {'clf__C': np.float64(0.0024244620170823282)}  
+4                0.300310      {'clf__C': np.float64(0.0002894266124716752)}  
+
+============================
+CONFUSION MATRICES (TUNED TOP-5)
+============================
+
+Price | LogReg (TUNED) | Macro-F1=0.3478±0.0588
+Best params: {'clf__solver': 'liblinear', 'clf__penalty': 'l2', 'clf__C': np.float64(0.5336699231206307)}
+
+<Figure size 640x480 with 2 Axes>
+<Figure size 640x480 with 2 Axes>
+
+Price+News | LogReg (TUNED) | Macro-F1=0.3454±0.0559
+Best params: {'clf__solver': 'saga', 'clf__penalty': 'l2', 'clf__C': np.float64(0.1873817422860383)}
+
+<Figure size 640x480 with 2 Axes>
+<Figure size 640x480 with 2 Axes>
+
+Price | LinearSVM (TUNED) | Macro-F1=0.3399±0.0916
+Best params: {'clf__C': np.float64(0.0002894266124716752)}
+
+<Figure size 640x480 with 2 Axes>
+<Figure size 640x480 with 2 Axes>
+
+Price+News | LinearSVM (TUNED) | Macro-F1=0.3340±0.0715
+Best params: {'clf__C': np.float64(0.0024244620170823282)}
+
+<Figure size 640x480 with 2 Axes>
+<Figure size 640x480 with 2 Axes>
+
+Price+Fear | LinearSVM (TUNED) | Macro-F1=0.3154±0.0737
+Best params: {'clf__C': np.float64(0.0002894266124716752)}
+
+<Figure size 640x480 with 2 Axes>
+<Figure size 640x480 with 2 Axes>

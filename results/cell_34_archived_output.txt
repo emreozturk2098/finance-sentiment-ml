@@ -1,0 +1,106 @@
+Experiments created:
+- Price: rows=678, features=16
+- Price+Fear: rows=678, features=17
+- Price+News: rows=678, features=20
+- Price+Fear+News: rows=678, features=21
+
+BASE RESULTS (sorted by macro_f1_mean):
+
+              setup        model hidden_layer_sizes  n_folds  macro_f1_mean  \
+0        Price+Fear  MLP_2HL_8_4             (8, 4)        9       0.354998   
+1             Price    MLP_1HL_4               (4,)        9       0.354120   
+2             Price    MLP_1HL_8               (8,)        9       0.352923   
+3        Price+Fear  MLP_2HL_4_4             (4, 4)        9       0.351625   
+4        Price+Fear    MLP_1HL_4               (4,)        9       0.338964   
+5        Price+News  MLP_2HL_8_4             (8, 4)        9       0.334565   
+6   Price+Fear+News  MLP_2HL_4_4             (4, 4)        9       0.333955   
+7        Price+Fear    MLP_1HL_8               (8,)        9       0.324533   
+8   Price+Fear+News    MLP_1HL_4               (4,)        9       0.324333   
+9        Price+News    MLP_1HL_8               (8,)        9       0.322463   
+10       Price+News  MLP_2HL_4_4             (4, 4)        9       0.311358   
+11  Price+Fear+News  MLP_2HL_8_4             (8, 4)        9       0.299203   
+12            Price  MLP_2HL_8_4             (8, 4)        9       0.295429   
+13  Price+Fear+News    MLP_1HL_8               (8,)        9       0.294523   
+14       Price+News    MLP_1HL_4               (4,)        9       0.293089   
+
+    macro_f1_std  acc_mean  balacc_mean  
+0       0.086049  0.485185     0.400094  
+1       0.057366  0.440741     0.379450  
+2       0.085448  0.451852     0.379657  
+3       0.055171  0.459259     0.384565  
+4       0.075836  0.425926     0.379373  
+5       0.085097  0.425926     0.343827  
+6       0.077502  0.462963     0.366721  
+7       0.075637  0.422222     0.365234  
+8       0.077577  0.414815     0.387315  
+9       0.057176  0.411111     0.382188  
+10      0.080169  0.459259     0.366757  
+11      0.034265  0.366667     0.332020  
+12      0.071702  0.381481     0.315295  
+13      0.042690  0.366667     0.339919  
+14      0.070009  0.396296     0.323463  
+
+TOP-5 to tune:
+{'setup': 'Price+Fear', 'model': 'MLP_2HL_8_4', 'hidden_layer_sizes': (8, 4)}
+{'setup': 'Price', 'model': 'MLP_1HL_4', 'hidden_layer_sizes': (4,)}
+{'setup': 'Price', 'model': 'MLP_1HL_8', 'hidden_layer_sizes': (8,)}
+{'setup': 'Price+Fear', 'model': 'MLP_2HL_4_4', 'hidden_layer_sizes': (4, 4)}
+{'setup': 'Price+Fear', 'model': 'MLP_1HL_4', 'hidden_layer_sizes': (4,)}
+
+Total candidate param sets before cap: 150
+Per-model cap: 40
+
+==========================================================================================
+[TUNED-FAST] Price+Fear | MLP_2HL_8_4 | HLS=(8, 4)
+Best Macro-F1 = 0.3678 ± 0.1253 | folds=9 | tested=40
+Best Params:
+{'clf__solver': 'adam', 'clf__alpha': 1e-05, 'clf__learning_rate_init': 0.01, 'clf__activation': 'relu', 'clf__early_stopping': False, 'clf__validation_fraction': 0.1, 'clf__n_iter_no_change': 10, 'clf__batch_size': 32}
+
+==========================================================================================
+[TUNED-FAST] Price | MLP_1HL_4 | HLS=(4,)
+Best Macro-F1 = 0.3833 ± 0.0664 | folds=9 | tested=40
+Best Params:
+{'clf__solver': 'adam', 'clf__alpha': 0.001, 'clf__learning_rate_init': 0.001, 'clf__activation': 'relu', 'clf__early_stopping': False, 'clf__validation_fraction': 0.1, 'clf__n_iter_no_change': 10, 'clf__batch_size': 32}
+
+==========================================================================================
+[TUNED-FAST] Price | MLP_1HL_8 | HLS=(8,)
+Best Macro-F1 = 0.3720 ± 0.0596 | folds=9 | tested=40
+Best Params:
+{'clf__solver': 'adam', 'clf__alpha': 0.0001, 'clf__learning_rate_init': 0.0001, 'clf__activation': 'tanh', 'clf__early_stopping': False, 'clf__validation_fraction': 0.15, 'clf__n_iter_no_change': 10, 'clf__batch_size': 32}
+
+==========================================================================================
+[TUNED-FAST] Price+Fear | MLP_2HL_4_4 | HLS=(4, 4)
+Best Macro-F1 = 0.3810 ± 0.1263 | folds=9 | tested=40
+Best Params:
+{'clf__solver': 'adam', 'clf__alpha': 0.0001, 'clf__learning_rate_init': 0.0001, 'clf__activation': 'tanh', 'clf__early_stopping': False, 'clf__validation_fraction': 0.15, 'clf__n_iter_no_change': 10, 'clf__batch_size': 32}
+
+==========================================================================================
+[TUNED-FAST] Price+Fear | MLP_1HL_4 | HLS=(4,)
+Best Macro-F1 = 0.3776 ± 0.1194 | folds=9 | tested=40
+Best Params:
+{'clf__solver': 'adam', 'clf__alpha': 1e-05, 'clf__learning_rate_init': 0.001, 'clf__activation': 'relu', 'clf__early_stopping': False, 'clf__validation_fraction': 0.1, 'clf__n_iter_no_change': 10, 'clf__batch_size': 32}
+
+##########################################################################################
+FAST TUNING SUMMARY (Top-5, capped search)
+##########################################################################################
+
+        setup        model hidden_layer_sizes  n_folds  best_macro_f1_mean  \
+0       Price    MLP_1HL_4               (4,)        9            0.383330   
+1  Price+Fear  MLP_2HL_4_4             (4, 4)        9            0.380953   
+2  Price+Fear    MLP_1HL_4               (4,)        9            0.377628   
+3       Price    MLP_1HL_8               (8,)        9            0.372039   
+4  Price+Fear  MLP_2HL_8_4             (8, 4)        9            0.367817   
+
+   best_macro_f1_std  tested  \
+0           0.066383      40   
+1           0.126339      40   
+2           0.119351      40   
+3           0.059643      40   
+4           0.125264      40   
+
+                                         best_params  
+0  {'clf__solver': 'adam', 'clf__alpha': 0.001, '...  
+1  {'clf__solver': 'adam', 'clf__alpha': 0.0001, ...  
+2  {'clf__solver': 'adam', 'clf__alpha': 1e-05, '...  
+3  {'clf__solver': 'adam', 'clf__alpha': 0.0001, ...  
+4  {'clf__solver': 'adam', 'clf__alpha': 1e-05, '...  
